@@ -66,6 +66,11 @@
     li {
       margin-bottom: 1.5rem;
     }
+    li ul li {
+        margin-bottom: 0.5rem;
+        margin-left: 20px;
+        list-style-type: disc;
+    }
     strong {
       color: #000;
       font-weight: 600;
@@ -82,8 +87,8 @@
         color: #555;
         font-style: italic;
     }
-    .skills-list {
-        padding: 10px 0;
+    .skills-list p {
+        margin: 0.5em 0;
     }
   </style>
 </head>
@@ -103,16 +108,15 @@
     </section>
 
     <section id="experience">
-      <h2>Industrial Experience</h2>
+      <h2>Internship</h2>
       <ul>
         <li>
           <strong>Digital Design Engineering Intern, Texas Instruments</strong>
           <div class="meta">Bangalore, India [May '25 – July '25]</div>
-          <p>Worked on real-time FPGA-based signal processing systems for high-speed converters. Key projects included:</p>
-          <ul>
-            <li>&bull; Designing a system for monitoring noise variance and harmonic power in high-speed ADCs using Modified Goertzel and Welford algorithms.</li>
-            <li>&bull; Implementing a resource-efficient multirate decimation pipeline for ADC data using Cascaded Integrator-Comb (CIC) filters.</li>
-          </ul>
+            <ul>
+              <li>&bull; <strong>Real-Time Monitoring System for High-Speed ADCs:</strong> Designed and implemented a real-time FPGA system to monitor high-speed (4-GSPS, 16-bit samples) ADC outputs, utilizing Modified Goertzel and Welford’s algorithms for efficient, single-pass harmonic power and noise variance computation.</li>
+              <li>&bull; <strong>FPGA-Based Multirate Decimation Pipeline:</strong> Developed a resource-efficient, multi-stage decimation pipeline using Cascaded Integrator-Comb (CIC) and compensation filters to robustly process 12/16-bit (5.33/4-GSPS) ADC data while mitigating aliasing and SNR degradation.</li>
+            </ul>
         </li>
       </ul>
     </section>
@@ -121,14 +125,14 @@
         <h2>Publications</h2>
         <ul>
             <li>
-                <strong>OwlsEye: Real-Time Low-Light Video Instance Segmentation on Edge and Exploration of Fixed-Posit Quantization</strong>
+                <strong>OwlsEye: Real-Time Low-Light Video Instance Segmentation on Edge and Exploration of Fixed-Posit</strong>
                 <div class="meta">38th International Conference on VLSI Design (VLSID), 2025</div>
-                <p>Co-authored and implemented the Fixed-Posit quantization module to create a real-time pipeline for low-light video instance segmentation on edge devices. <a href="https://doi.org/10.1109/VLSID64188.2025.00090" target="_blank" rel="noopener">View Publication</a></p>
+                <p>Co-authored and implemented a Fixed-Posit quantization module that achieved a 2.35x latency improvement and 3.6x power reduction over INT8, and a 9.02x latency improvement and 87.91x power reduction over FP32 without significant loss in accuracy. <a href="https://doi.org/10.1109/VLSID64188.2025.00090" target="_blank" rel="noopener">View Publication</a></p>
             </li>
             <li>
                 <strong>AxLaM: Energy-Efficient Accelerator Design for Language Models for Edge Computing</strong>
                 <div class="meta">Philosophical Transactions of the Royal Society A, 2025</div>
-                <p>Contributed to the quantization methodology and performance benchmarking for an energy-efficient hardware accelerator for edge-based language models. <a href="https://doi.org/10.1098/rsta.2023.0395" target="_blank" rel="noopener">View Publication</a></p>
+                <p>Contributed to the quantization methodology for AxLaM, an accelerator achieving 9x lower energy consumption and a 58% area reduction compared to state-of-the-art. <a href="https://doi.org/10.1098/rsta.2023.0395" target="_blank" rel="noopener">View Publication</a></p>
             </li>
             <li>
                 <strong>[Accepted] Fixed-Posit Quantization for Layerwise Neural Network Optimization</strong>
@@ -139,25 +143,42 @@
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>Academic Projects</h2>
       <ul>
         <li>
-          <strong>Battery Management System on a FPGA</strong> [Jan '25 - Apr '25] — Designed and implemented a modular, FPGA-based BMS for real-time monitoring of battery states (SoC, SoP, SoT) with comprehensive protection logic and UART communication.
+          <strong>STM32-based Automatic Number Plate Recognition System</strong> [Apr '25 - May '25] — Pivoted from a memory-constrained on-device model by offloading image processing to an ESP32, which communicated with a local backend running an Ollama LLM and Tesseract OCR pipeline. Achieved an end-to-end latency of ~2 seconds while the STM32 coordinated peripherals. <a href="https://github.com/wannabecodeboss/333" target="_blank" rel="noopener">View on GitHub</a>
         </li>
         <li>
-          <strong>Intelligent Vehicle Identification System</strong> [Feb '25 - Apr '25] — Built a license plate recognition system using an OpenMV M7, a local LLM for text extraction, and an ESP32 for data transmission, with an STM32-controlled barrier. <a href="https://drive.google.com/drive/folders/1Z7YUEVay7Z-gxQ-N2569Bc5Ldv9RmG-S" target="_blank" rel="noopener">View Project</a>
+            <strong>Automatic Gain Control (AGC) for Microphones</strong> [Aug '24 - Nov '24] — Designed and assembled a complete analog AGC system from scratch, including schematic capture, multi-layer PCB layout in KiCad, and hand-soldering. The final circuit utilizes a MOSFET feedback loop to automatically normalize microphone audio levels.
         </li>
         <li>
-          <strong>Genetic Algorithm-Based FIR Filter Designer</strong> [Oct '24 - Nov '24] — Developed an interactive MATLAB App with a GUI to design FIR filters, using a Genetic Algorithm to optimize filter coefficients and visualize real-time convergence.
+          <strong>Microprocessors & Embedded Systems Lab Projects (ES 333)</strong> — Developed a variety of embedded systems on the STM32 platform, focusing on hardware interfacing, real-time control, and interrupt-driven programming. Key tasks included:
+          <ul>
+            <li>Implemented an interrupt-driven digital clock with an alarm on a 16x2 LCD.</li>
+            <li>Created a real-time data visualizer to display ADC readings from a potentiometer as a dynamic bar graph on an LCD.</li>
+            <li>Designed a multifunctional up-down counter with button-controlled mode and speed settings.</li>
+            <li>Developed interrupt-based LED chase patterns with controls for speed and pattern type.</li>
+            <li>Built a 7-segment countdown timer and an N-bit Johnson ring counter.</li>
+            <li>Programmed Morse code and binary roll number displays using LEDs.</li>
+          </ul>
+        </li>
+        <li>
+            <strong>8085 Assembly Programming: Algorithms & Data Manipulation</strong> — Wrote and tested 8085 assembly programs to perform complex data operations. Projects included:
+            <ul>
+                <li>An array processing program to find the largest/smallest values, calculate the mean, and count elements above the average.</li>
+                <li>A program to calculate the GCD (using Euclidean algorithm) and LCM of two 8-bit numbers.</li>
+                <li>A full 3x3 matrix multiplication implementation.</li>
+                <li>A 16-bit binary number to BCD conversion algorithm.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>FPGA-Based Battery Management System (BMS)</strong> [Jan '25 - Apr '25] — Designed a modular FPGA-based BMS for parallel monitoring of SoC, SoP, and SoT, implementing multi-level protection logic and a UART interface for real-time data logging.
+        </li>
+        <li>
+            <strong>Genetic Algorithm-Based FIR Filter Designer</strong> [Oct '24 - Nov '24] — Developed an interactive MATLAB App with a GUI that uses a Genetic Algorithm to optimize FIR filter coefficients based on user specifications, with real-time visualization of convergence.
         </li>
         <li>
           <strong>QPyTorch++: Simulating Low Precision Training</strong> [May '24 - July '24] — Developed a CUDA framework over PyTorch to simulate neural network training and inference using the "fixed posit" number system, tested on networks like AlexNet, ResNet34, and various GANs.
-        </li>
-        <li>
-          <strong>Image Processing Toolkit on FPGA</strong> [Feb '24 - Apr '24] — Implemented a toolkit on a Basys3 board for processing 128x128 grayscale images, including kernel-based filters and an image enhancement pipeline. Received the Best Project Award. <a href="https://github.com/GoudAbhinav/Image-Processing-Toolkit--IPT1.git" target="_blank" rel="noopener">View on GitHub</a>
-        </li>
-        <li>
-          <strong>Child Safety Monitoring App using Fuzzy Logic</strong> [Mar '24] — Designed a pair of Android apps using fuzzy logic to determine a child's danger level based on accelerometer and sound data, communicating via TCP/IP. <a href="https://github.com/GoudAbhinav/SafetyApp-using-Fuzzy-logic.git" target="_blank" rel="noopener">View on GitHub</a>
         </li>
       </ul>
     </section>
@@ -165,15 +186,42 @@
     <section id="skills">
         <h2>Technical Skills</h2>
         <div class="skills-list">
-            <p><strong>Programming Languages:</strong> Python, Verilog, C, C++, HTML</p>
-            <p><strong>Tools & Frameworks:</strong> PyTorch, Pandas, Numpy, Sklearn, Xilinx Vivado, MATLAB (Simulink), Cadence Virtuoso, Docker, Git/GitHub</p>
+            <p><strong>Microcontrollers & Embedded Tools:</strong> STM32, ESP32, Raspberry Pi, Arduino UNO | STM32CubeIDE, Arduino IDE, KiCad</p>
+            <p><strong>Languages & Protocols:</strong> C++, C, Python, Assembly (ARMv7), Rust | UART, SPI, I2C, CAN, BLE</p>
+            <p><strong>Lab & Debugging Tools:</strong> Digital Oscilloscope (DSO), Signal Generator, Multimeter, Soldering</p>
+            <p><strong>High-Level Design & Software:</strong> Verilog, SystemVerilog, MATLAB | PyTorch, NumPy, Git, Docker</p>
         </div>
+    </section>
+
+    <section id="responsibilities">
+        <h2>Positions of Responsibility</h2>
+        <ul>
+            <li>
+                <strong>Teaching Assistant, Digital Systems (ES 204)</strong>
+                <div class="meta">IIT Gandhinagar [Jan '25 – Apr '25] and [Aug '25 - Present]</div>
+                <p>Appointed for two consecutive semesters to conduct labs, grade assignments, and mentor over 200 undergraduate students in digital design concepts and Verilog, including project mentorship.</p>
+            </li>
+            <li>
+                <strong>Council Coordinator, Welfare Council</strong>
+                <div class="meta">IIT Gandhinagar [June '25 – Present]</div>
+                <p>Lead the planning, organization, and administrative coordination for all council events and initiatives, advising on strategy and managing relations with institute authorities.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="achievements">
+        <h2>Academic Achievements</h2>
+        <ul>
+            <li>Awarded <strong>Dean's List award</strong> (Term I & II) and Reliance Foundation Undergraduate Scholarship (2022-23).</li>
+            <li>Secured competitive branch change from Civil to Electrical Engineering based on high CPI.</li>
+        </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>
         <a href="mailto:abhinav.goud@iitgn.ac.in">abhinav.goud@iitgn.ac.in</a> &bull;
+        <a href="https://www.linkedin.com/in/abhinav-goud-022a6a252/" target="_blank" rel="noopener">LinkedIn</a> &bull;
         <a href="https://github.com/GoudAbhinav" target="_blank" rel="noopener">GitHub</a>
       </p>
     </section>
