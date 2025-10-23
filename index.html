@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles.css">
   <meta name="description" content="Portfolio for Abhinav Goud.">
   <style>
-    /* Adding some basic styles to improve readability */
+    /* Basic styles from before */
     body {
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
@@ -43,10 +43,8 @@
       font-size: 2.5rem;
     }
     h2 {
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 10px;
-      margin-top: 2rem;
       font-size: 1.8rem;
+      margin: 0; /* Reset margin for use inside button */
     }
     .tagline {
       font-size: 1.2rem;
@@ -90,6 +88,42 @@
     .skills-list p {
         margin: 0.5em 0;
     }
+
+    /* NEW STYLES FOR COLLAPSIBLE SECTIONS */
+    .collapsible-trigger {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+    }
+    .collapsible-trigger:hover h2 {
+        color: #007bff;
+    }
+    .collapsible-trigger .icon {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+        font-weight: 300;
+    }
+    .collapsible-trigger.active .icon {
+        transform: rotate(45deg);
+    }
+    .collapsible-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      padding-top: 0;
+    }
+    .collapsible-content.open {
+        padding-top: 20px; /* Add padding only when open */
+    }
+
   </style>
 </head>
 <body>
@@ -107,113 +141,148 @@
       <p>I am a final-year Electrical Engineering student at IIT Gandhinagar with a strong foundation in digital design, embedded systems, and machine learning. My practical experience includes a digital design internship at Texas Instruments, where I developed real-time FPGA-based signal processing systems. I am passionate about hardware acceleration, approximate computing, and creating efficient, real-world solutions. My academic and project work has led to publications in conferences like VLSID and DAC.</p>
     </section>
 
-    <section id="experience">
-      <h2>Internship</h2>
-      <ul>
-        <li>
-          <strong>Digital Design Engineering Intern, Texas Instruments</strong>
-          <div class="meta">Bangalore, India [May '25 – July '25]</div>
-            <ul>
-              <li>&bull; <strong>Real-Time Monitoring System for High-Speed ADCs:</strong> Designed and implemented a real-time FPGA system to monitor high-speed (4-GSPS, 16-bit samples) ADC outputs, utilizing Modified Goertzel and Welford’s algorithms for efficient, single-pass harmonic power and noise variance computation.</li>
-              <li>&bull; <strong>FPGA-Based Multirate Decimation Pipeline:</strong> Developed a resource-efficient, multi-stage decimation pipeline using Cascaded Integrator-Comb (CIC) and compensation filters to robustly process 12/16-bit (5.33/4-GSPS) ADC data while mitigating aliasing and SNR degradation.</li>
-            </ul>
-        </li>
-      </ul>
+    <section>
+      <button class="collapsible-trigger">
+        <h2>Internship</h2>
+        <span class="icon">+</span>
+      </button>
+      <div class="collapsible-content">
+        <ul>
+          <li>
+            <strong>Digital Design Engineering Intern, Texas Instruments</strong>
+            <div class="meta">Bangalore, India [May '25 – July '25]</div>
+              <ul>
+                <li>&bull; <strong>Real-Time Monitoring System for High-Speed ADCs:</strong> Designed and implemented a real-time FPGA system to monitor high-speed (4-GSPS, 16-bit samples) ADC outputs, utilizing Modified Goertzel and Welford’s algorithms for efficient, single-pass harmonic power and noise variance computation.</li>
+                <li>&bull; <strong>FPGA-Based Multirate Decimation Pipeline:</strong> Developed a resource-efficient, multi-stage decimation pipeline using Cascaded Integrator-Comb (CIC) and compensation filters to robustly process 12/16-bit (5.33/4-GSPS) ADC data while mitigating aliasing and SNR degradation.</li>
+              </ul>
+          </li>
+        </ul>
+      </div>
     </section>
     
-    <section id="publications">
-        <h2>Publications</h2>
-        <ul>
-            <li>
-                <strong>OwlsEye: Real-Time Low-Light Video Instance Segmentation on Edge and Exploration of Fixed-Posit</strong>
-                <div class="meta">38th International Conference on VLSI Design (VLSID), 2025</div>
-                <p>Co-authored and implemented a Fixed-Posit quantization module that achieved a 2.35x latency improvement and 3.6x power reduction over INT8, and a 9.02x latency improvement and 87.91x power reduction over FP32 without significant loss in accuracy. <a href="https://doi.org/10.1109/VLSID64188.2025.00090" target="_blank" rel="noopener">View Publication</a></p>
-            </li>
-            <li>
-                <strong>AxLaM: Energy-Efficient Accelerator Design for Language Models for Edge Computing</strong>
-                <div class="meta">Philosophical Transactions of the Royal Society A, 2025</div>
-                <p>Contributed to the quantization methodology for AxLaM, an accelerator achieving 9x lower energy consumption and a 58% area reduction compared to state-of-the-art. <a href="https://doi.org/10.1098/rsta.2023.0395" target="_blank" rel="noopener">View Publication</a></p>
-            </li>
-        </ul>
-    </section>
-
-    <section id="projects">
-      <h2>Academic Projects</h2>
-      <ul>
-        <li>
-            <strong>AI4Ax: AI-Driven Design of Approximate Circuits</strong> [Jan '25 - Present] — Architected an AI framework to navigate a $10^{26}$ design space for approximate multipliers, achieving up to 203x power reduction by optimally selecting from Cadence-characterized 28nm compressors. Accepted at DAC LBR as a Work-in-Progress.
-        </li>
-        <li>
-          <strong>QPyTorch++: Simulating Low Precision Training</strong> [May '24 - July '24] — Developed a GPU-accelerated PyTorch framework for Fixed-Posit simulation, enabling rapid, hardware-aware exploration of custom number systems for models like ResNet and GANs. It is orders of magnitude faster than existing solutions. <a href="https://github.com/GoudAbhinav/EQ_Torch" target="_blank" rel="noopener">View on GitHub</a>
-        </li>
-        <li>
-            <strong>Image Processing Toolkit on FPGA</strong> [Feb '24 - Apr '24] — Implemented an image processing toolkit on a Basys3 FPGA to process 128x128 pixel images transferred via UART. Performed multiple convolution operations (smoothing, sharpening) using BRAM. Awarded Best Project in the course. <a href="https://github.com/GoudAbhinav/Image-Processing-Toolkit--IPT1.git" target="_blank" rel="noopener">View on GitHub</a>
-        </li>
-        <li>
-            <strong>STM32-based Automatic Number Plate Recognition System</strong> [Apr '25 - May '25] — Pivoted from a memory-constrained on-device model by offloading image processing to an ESP32, which communicated with a local backend running an Ollama LLM and Tesseract OCR pipeline. Achieved an end-to-end latency of ~2 seconds while the STM32 coordinated peripherals. <a href="https://github.com/wannabecodeboss/333" target="_blank" rel="noopener">View on GitHub</a>
-        </li>
-        <li>
-            <strong>Automatic Gain Control (AGC) for Microphones</strong> [Aug '24 - Nov '24] — Designed and assembled a complete analog AGC system from scratch, including schematic capture, multi-layer PCB layout in KiCad, and hand-soldering. The final circuit utilizes a MOSFET feedback loop to automatically normalize microphone audio levels.
-        </li>
-        <li>
-          <strong>Microprocessors & Embedded Systems Lab Projects (ES 333)</strong> — Developed a variety of embedded systems on the STM32 platform, focusing on hardware interfacing, real-time control, and interrupt-driven programming.
-        </li>
-        <li>
-            <strong>8085 Assembly Programming: Algorithms & Data Manipulation</strong> — Wrote and tested 8085 assembly programs to perform complex data operations, including an array processor, a GCD/LCM calculator, and a 3x3 matrix multiplication implementation.
-        </li>
-        <li>
-            <strong>Genetic Algorithm-Based FIR Filter Designer</strong> [Oct '24 - Nov '24] — Developed an interactive MATLAB App with a GUI that uses a Genetic Algorithm to optimize FIR filter coefficients based on user specifications, with real-time visualization of convergence. <a href="https://github.com/GoudAbhinav/Genetic-Algorithm-Based-Filter-Design" target="_blank" rel="noopener">View on GitHub</a>
-        </li>
-         <li>
-            [cite_start]<strong>Matlab App for Second-Order System Analysis</strong> [Apr '24] — Designed and exported a standalone MATLAB app to perform time-domain analysis of second-order systems, allowing users to dynamically change Gain, Natural Frequency, and Damping Ratio and plot the system's response. [cite: 987, 989, 990, 991]
-        </li>
-        <li>
-            [cite_start]<strong>Child Safety Monitoring App using Fuzzy Logic</strong> [Mar '24] — Designed a pair of Android apps to monitor a child's safety level using a fuzzy logic system that responded to accelerometer and sound level data, communicating between devices via TCP/IP. [cite: 117, 119, 121, 122]
-        </li>
-      </ul>
-    </section>
-
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-list">
-            <p><strong>Microcontrollers & Embedded Tools:</strong> STM32, ESP32, Raspberry Pi, Arduino UNO | STM32CubeIDE, Arduino IDE, KiCad</p>
-            <p><strong>Languages & Protocols:</strong> C++, C, Python, Verilog, SystemVerilog, Assembly (ARMv7), Rust | UART, SPI, I2C, CAN, BLE</p>
-            <p><strong>Lab & Debugging Tools:</strong> Digital Oscilloscope (DSO), Signal Generator, Multimeter, Soldering</p>
-            <p><strong>High-Level Design & Software:</strong> MATLAB, Cadence Virtuoso, Xilinx Vivado | PyTorch, NumPy, Pandas, Git, Docker</p>
+    <section>
+        <button class="collapsible-trigger">
+            <h2>Publications</h2>
+            <span class="icon">+</span>
+        </button>
+        <div class="collapsible-content">
+            <ul>
+                <li>
+                    <strong>OwlsEye: Real-Time Low-Light Video Instance Segmentation on Edge and Exploration of Fixed-Posit</strong>
+                    <div class="meta">38th International Conference on VLSI Design (VLSID), 2025</div>
+                    <p>Co-authored and implemented a Fixed-Posit quantization module that achieved a 2.35x latency improvement and 3.6x power reduction over INT8, and a 9.02x latency improvement and 87.91x power reduction over FP32 without significant loss in accuracy. <a href="https://doi.org/10.1109/VLSID64188.2025.00090" target="_blank" rel="noopener">View Publication</a></p>
+                </li>
+                <li>
+                    <strong>AxLaM: Energy-Efficient Accelerator Design for Language Models for Edge Computing</strong>
+                    <div class="meta">Philosophical Transactions of the Royal Society A, 2025</div>
+                    <p>Contributed to the quantization methodology for AxLaM, an accelerator achieving 9x lower energy consumption and a 58% area reduction compared to state-of-the-art. <a href="https://doi.org/10.1098/rsta.2023.0395" target="_blank" rel="noopener">View Publication</a></p>
+                </li>
+            </ul>
         </div>
     </section>
 
-    <section id="responsibilities">
-        <h2>Positions of Responsibility</h2>
-        <ul>
-            <li>
-                <strong>Teaching Assistant, Digital Systems (ES 204)</strong>
-                <div class="meta">IIT Gandhinagar [Jan '25 – Apr '25] and [Aug '25 - Present]</div>
-                <p>Appointed by Prof. Joycee Mekie for two consecutive semesters to conduct labs, grade assignments, and mentor over 200 undergraduate students in digital design concepts and Verilog, including project mentorship.</p>
-            </li>
-            <li>
-                <strong>Council Coordinator, Welfare Council</strong>
-                <div class="meta">IIT Gandhinagar [June '25 – Present]</div>
-                <p>Lead the planning, organization, and administrative coordination for all council events and initiatives, advising on strategy and managing relations with institute authorities. Promoted from outlets coordinator last Academic Year.</p>
-            </li>
-        </ul>
+    <section>
+        <button class="collapsible-trigger">
+            <h2>Academic Projects</h2>
+            <span class="icon">+</span>
+        </button>
+        <div class="collapsible-content">
+            <ul>
+                <li>
+                    <strong>AI4Ax: AI-Driven Design of Approximate Circuits</strong> [Jan '25 - Present] — Architected an AI framework to navigate a $10^{26}$ design space for approximate multipliers, achieving up to 203x power reduction by optimally selecting from Cadence-characterized 28nm compressors. Accepted at DAC LBR as a Work-in-Progress.
+                </li>
+                <li>
+                  <strong>QPyTorch++: Simulating Low Precision Training</strong> [May '24 - July '24] — Developed a GPU-accelerated PyTorch framework for Fixed-Posit simulation, enabling rapid, hardware-aware exploration of custom number systems for models like ResNet and GANs. It is orders of magnitude faster than existing solutions. <a href="https://github.com/GoudAbhinav/EQ_Torch" target="_blank" rel="noopener">View on GitHub</a>
+                </li>
+                <li>
+                    <strong>Image Processing Toolkit on FPGA</strong> [Feb '24 - Apr '24] — Implemented an image processing toolkit on a Basys3 FPGA to process 128x128 pixel images transferred via UART. Performed multiple convolution operations (smoothing, sharpening) using BRAM. Awarded Best Project in the course. <a href="https://github.com/GoudAbhinav/Image-Processing-Toolkit--IPT1.git" target="_blank" rel="noopener">View on GitHub</a>
+                </li>
+                <li>
+                    <strong>STM32-based Automatic Number Plate Recognition System</strong> [Apr '25 - May '25] — Pivoted from a memory-constrained on-device model by offloading image processing to an ESP32, which communicated with a local backend running an Ollama LLM and Tesseract OCR pipeline. Achieved an end-to-end latency of ~2 seconds while the STM32 coordinated peripherals. <a href="https://github.com/wannabecodeboss/333" target="_blank" rel="noopener">View on GitHub</a>
+                </li>
+                <li>
+                    <strong>Automatic Gain Control (AGC) for Microphones</strong> [Aug '24 - Nov '24] — Designed and assembled a complete analog AGC system from scratch, including schematic capture, multi-layer PCB layout in KiCad, and hand-soldering. The final circuit utilizes a MOSFET feedback loop to automatically normalize microphone audio levels.
+                </li>
+                <li>
+                  <strong>Microprocessors & Embedded Systems Lab Projects (ES 333)</strong> — Developed a variety of embedded systems on the STM32 platform, focusing on hardware interfacing, real-time control, and interrupt-driven programming.
+                </li>
+                <li>
+                    <strong>8085 Assembly Programming: Algorithms & Data Manipulation</strong> — Wrote and tested 8085 assembly programs to perform complex data operations, including an array processor, a GCD/LCM calculator, and a 3x3 matrix multiplication implementation.
+                </li>
+                <li>
+                    <strong>Genetic Algorithm-Based FIR Filter Designer</strong> [Oct '24 - Nov '24] — Developed an interactive MATLAB App with a GUI that uses a Genetic Algorithm to optimize FIR filter coefficients based on user specifications, with real-time visualization of convergence. <a href="https://github.com/GoudAbhinav/Genetic-Algorithm-Based-Filter-Design" target="_blank" rel="noopener">View on GitHub</a>
+                </li>
+                 <li>
+                    <strong>Matlab App for Second-Order System Analysis</strong> [Apr '24] — Designed and exported a standalone MATLAB app to perform time-domain analysis of second-order systems, allowing users to dynamically change Gain, Natural Frequency, and Damping Ratio and plot the system's response.
+                </li>
+                <li>
+                    <strong>Child Safety Monitoring App using Fuzzy Logic</strong> [Mar '24] — Designed a pair of Android apps to monitor a child's safety level using a fuzzy logic system that responded to accelerometer and sound level data, communicating between devices via TCP/IP.
+                </li>
+            </ul>
+        </div>
     </section>
 
-    <section id="achievements">
-        <h2>Academic Achievements</h2>
-        <ul>
-            [cite_start]<li>Awarded <strong>Dean's List award</strong> (Term I & II) and Reliance Foundation Undergraduate Scholarship (2022-23). [cite: 131, 133, 998, 1000]</li>
-            [cite_start]<li>Secured competitive branch change from Civil to Electrical Engineering based on high CPI. [cite: 132, 999]</li>
-        </ul>
+    <section>
+        <button class="collapsible-trigger">
+            <h2>Technical Skills</h2>
+            <span class="icon">+</span>
+        </button>
+        <div class="collapsible-content">
+            <div class="skills-list">
+                <p><strong>Microcontrollers & Embedded Tools:</strong> STM32, ESP32, Raspberry Pi, Arduino UNO | STM32CubeIDE, Arduino IDE, KiCad</p>
+                <p><strong>Languages & Protocols:</strong> C++, C, Python, Verilog, SystemVerilog, Assembly (ARMv7), Rust | UART, SPI, I2C, CAN, BLE</p>
+                <p><strong>Lab & Debugging Tools:</strong> Digital Oscilloscope (DSO), Signal Generator, Multimeter, Soldering</p>
+                <p><strong>High-Level Design & Software:</strong> MATLAB, Cadence Virtuoso, Xilinx Vivado | PyTorch, NumPy, Pandas, Git, Docker</p>
+            </div>
+        </div>
     </section>
 
-    <section id="extracurriculars">
-        <h2>Extracurricular Activities</h2>
-        <ul>
-            [cite_start]<li>Enthusiastic swimmer, regularly participating in inter-IIT aquatics training sessions and competitive events. [cite: 145, 1014]</li>
-            [cite_start]<li>Worked as a senior executive of Tech Exposition in Amalthea, reviving the event after 4 years by hosting over 14 private and government institutions. [cite: 146, 147, 1015, 1016]</li>
-            [cite_start]<li>Elected as a Student Representative for the Foundation Programme '22 by coordinating professors. [cite: 148, 1017]</li>
-        </ul>
+    <section>
+        <button class="collapsible-trigger">
+            <h2>Positions of Responsibility</h2>
+            <span class="icon">+</span>
+        </button>
+        <div class="collapsible-content">
+            <ul>
+                <li>
+                    <strong>Teaching Assistant, Digital Systems (ES 204)</strong>
+                    <div class="meta">IIT Gandhinagar [Jan '25 – Apr '25] and [Aug '25 - Present]</div>
+                    <p>Appointed by Prof. Joycee Mekie for two consecutive semesters to conduct labs, grade assignments, and mentor over 200 undergraduate students in digital design concepts and Verilog, including project mentorship.</p>
+                </li>
+                <li>
+                    <strong>Council Coordinator, Welfare Council</strong>
+                    <div class="meta">IIT Gandhinagar [June '25 – Present]</div>
+                    <p>Lead the planning, organization, and administrative coordination for all council events and initiatives, advising on strategy and managing relations with institute authorities. Promoted from outlets coordinator last Academic Year.</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <button class="collapsible-trigger">
+            <h2>Academic Achievements</h2>
+            <span class="icon">+</span>
+        </button>
+        <div class="collapsible-content">
+            <ul>
+                <li>Awarded <strong>Dean's List award</strong> (Term I & II) and Reliance Foundation Undergraduate Scholarship (2022-23).</li>
+                <li>Secured competitive branch change from Civil to Electrical Engineering based on high CPI.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <button class="collapsible-trigger">
+            <h2>Extracurricular Activities</h2>
+            <span class="icon">+</span>
+        </button>
+        <div class="collapsible-content">
+            <ul>
+                <li>Enthusiastic swimmer, regularly participating in inter-IIT aquatics training sessions and competitive events.</li>
+                <li>Worked as a senior executive of Tech Exposition in Amalthea, reviving the event after 4 years by hosting over 14 private and government institutions.</li>
+                <li>Elected as a Student Representative for the Foundation Programme '22 by coordinating professors.</li>
+            </ul>
+        </div>
     </section>
 
     <section id="contact">
@@ -229,5 +298,29 @@
   <footer class="site-footer">
     <p>Built with ❤️ — <a href="https://github.com/GoudAbhinav/GoudAbhinav.github.io" target="_blank" rel="noopener">Source</a></p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var triggers = document.getElementsByClassName('collapsible-trigger');
+      for (var i = 0; i < triggers.length; i++) {
+        triggers[i].addEventListener('click', function () {
+          this.classList.toggle('active');
+          var content = this.nextElementSibling;
+          var icon = this.querySelector('.icon');
+
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            content.classList.remove('open');
+            icon.textContent = '+';
+          } else {
+            content.classList.add('open');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.textContent = '−';
+          }
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
