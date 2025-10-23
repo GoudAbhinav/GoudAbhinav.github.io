@@ -3,47 +3,184 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>GoudAbhinav — Portfolio</title>
+  <title>Abhinav Goud — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Minimal portfolio for GoudAbhinav.">
+  <meta name="description" content="Portfolio for Abhinav Goud.">
+  <style>
+    /* Adding some basic styles to improve readability */
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .site-header, .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .site-header {
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    h2 {
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 10px;
+      margin-top: 2rem;
+      font-size: 1.8rem;
+    }
+    .tagline {
+      font-size: 1.2rem;
+      color: #666;
+    }
+    section {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1.5rem;
+    }
+    strong {
+      color: #000;
+      font-weight: 600;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .meta {
+        font-size: 0.9rem;
+        color: #555;
+        font-style: italic;
+    }
+    .skills-list {
+        padding: 10px 0;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <img src="assets/avatar.svg" alt="Avatar" class="avatar">
     <div>
-      <h1>GoudAbhinav</h1>
-      <p class="tagline">Trial for Website using AI — Minimal portfolio</p>
+      <h1>Abhinav Goud</h1>
+      <p class="tagline">Final Year Electrical Engineering Undergraduate | IIT Gandhinagar</p>
     </div>
   </header>
 
   <main class="container">
     <section id="about">
-      <h2>About</h2>
-      <p>Hi — I'm GoudAbhinav. This is a minimal portfolio generated with GitHub Copilot Chat Assistant. Replace this text with a brief bio about yourself.</p>
+      <h2>About Me</h2>
+      <p>I am a final-year Electrical Engineering student at IIT Gandhinagar with a strong foundation in digital design, embedded systems, and machine learning. My practical experience includes a digital design internship at Texas Instruments, where I developed real-time FPGA-based signal processing systems. I am passionate about hardware acceleration, approximate computing, and creating efficient, real-world solutions. My academic and project work has led to publications in conferences like VLSID and DAC.</p>
+    </section>
+
+    <section id="experience">
+      <h2>Industrial Experience</h2>
+      <ul>
+        <li>
+          <strong>Digital Design Engineering Intern, Texas Instruments</strong>
+          <div class="meta">Bangalore, India [May '25 – July '25]</div>
+          <p>Worked on real-time FPGA-based signal processing systems for high-speed converters. Key projects included:</p>
+          <ul>
+            <li>&bull; Designing a system for monitoring noise variance and harmonic power in high-speed ADCs using Modified Goertzel and Welford algorithms.</li>
+            <li>&bull; Implementing a resource-efficient multirate decimation pipeline for ADC data using Cascaded Integrator-Comb (CIC) filters.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    
+    <section id="publications">
+        <h2>Publications</h2>
+        <ul>
+            <li>
+                <strong>OwlsEye: Real-Time Low-Light Video Instance Segmentation on Edge and Exploration of Fixed-Posit Quantization</strong>
+                <div class="meta">38th International Conference on VLSI Design (VLSID), 2025</div>
+                <p>Co-authored and implemented the Fixed-Posit quantization module to create a real-time pipeline for low-light video instance segmentation on edge devices. <a href="https://doi.org/10.1109/VLSID64188.2025.00090" target="_blank" rel="noopener">View Publication</a></p>
+            </li>
+            <li>
+                <strong>AxLaM: Energy-Efficient Accelerator Design for Language Models for Edge Computing</strong>
+                <div class="meta">Philosophical Transactions of the Royal Society A, 2025</div>
+                <p>Contributed to the quantization methodology and performance benchmarking for an energy-efficient hardware accelerator for edge-based language models. <a href="https://doi.org/10.1098/rsta.2023.0395" target="_blank" rel="noopener">View Publication</a></p>
+            </li>
+            <li>
+                <strong>[Accepted] Fixed-Posit Quantization for Layerwise Neural Network Optimization</strong>
+                <div class="meta">Design Automation Conference (DAC), Late-Breaking Results, 2025</div>
+                <p>Led the design and implementation of a framework for adaptive layerwise quantization using Fixed-Posit formats, significantly reducing model size with minimal accuracy loss.</p>
+            </li>
+        </ul>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul class="projects">
+      <ul>
         <li>
-          <strong>Sample Project</strong> — A short description. <a href="#">View project</a>
+          <strong>Battery Management System on a FPGA</strong> [Jan '25 - Apr '25] — Designed and implemented a modular, FPGA-based BMS for real-time monitoring of battery states (SoC, SoP, SoT) with comprehensive protection logic and UART communication.
+        </li>
+        <li>
+          <strong>Intelligent Vehicle Identification System</strong> [Feb '25 - Apr '25] — Built a license plate recognition system using an OpenMV M7, a local LLM for text extraction, and an ESP32 for data transmission, with an STM32-controlled barrier. <a href="https://drive.google.com/drive/folders/1Z7YUEVay7Z-gxQ-N2569Bc5Ldv9RmG-S" target="_blank" rel="noopener">View Project</a>
+        </li>
+        <li>
+          <strong>Genetic Algorithm-Based FIR Filter Designer</strong> [Oct '24 - Nov '24] — Developed an interactive MATLAB App with a GUI to design FIR filters, using a Genetic Algorithm to optimize filter coefficients and visualize real-time convergence.
+        </li>
+        <li>
+          <strong>QPyTorch++: Simulating Low Precision Training</strong> [May '24 - July '24] — Developed a CUDA framework over PyTorch to simulate neural network training and inference using the "fixed posit" number system, tested on networks like AlexNet, ResNet34, and various GANs.
+        </li>
+        <li>
+          <strong>Image Processing Toolkit on FPGA</strong> [Feb '24 - Apr '24] — Implemented a toolkit on a Basys3 board for processing 128x128 grayscale images, including kernel-based filters and an image enhancement pipeline. Received the Best Project Award. <a href="https://github.com/GoudAbhinav/Image-Processing-Toolkit--IPT1.git" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+        <li>
+          <strong>Child Safety Monitoring App using Fuzzy Logic</strong> [Mar '24] — Designed a pair of Android apps using fuzzy logic to determine a child's danger level based on accelerometer and sound data, communicating via TCP/IP. <a href="https://github.com/GoudAbhinav/SafetyApp-using-Fuzzy-logic.git" target="_blank" rel="noopener">View on GitHub</a>
         </li>
       </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-list">
+            <p><strong>Programming Languages:</strong> Python, Verilog, C, C++, HTML</p>
+            <p><strong>Tools & Frameworks:</strong> PyTorch, Pandas, Numpy, Sklearn, Xilinx Vivado, MATLAB (Simulink), Cadence Virtuoso, Docker, Git/GitHub</p>
+        </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>
+        <a href="mailto:abhinav.goud@iitgn.ac.in">abhinav.goud@iitgn.ac.in</a> &bull;
         <a href="https://github.com/GoudAbhinav" target="_blank" rel="noopener">GitHub</a>
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Built with ❤️ — <a href="https://github.com/GoudAbhinav/GoudAbhinav.github.io">Source</a></p>
+    <p>Built with ❤️ — <a href="https://github.com/GoudAbhinav/GoudAbhinav.github.io" target="_blank" rel="noopener">Source</a></p>
   </footer>
 </body>
 </html>
