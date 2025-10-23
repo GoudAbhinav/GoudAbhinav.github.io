@@ -134,11 +134,6 @@
                 <div class="meta">Philosophical Transactions of the Royal Society A, 2025</div>
                 <p>Contributed to the quantization methodology for AxLaM, an accelerator achieving 9x lower energy consumption and a 58% area reduction compared to state-of-the-art. <a href="https://doi.org/10.1098/rsta.2023.0395" target="_blank" rel="noopener">View Publication</a></p>
             </li>
-            <li>
-                <strong>[Accepted] Fixed-Posit Quantization for Layerwise Neural Network Optimization</strong>
-                <div class="meta">Design Automation Conference (DAC), Late-Breaking Results, 2025</div>
-                <p>Led the design and implementation of a framework for adaptive layerwise quantization using Fixed-Posit formats, significantly reducing model size with minimal accuracy loss.</p>
-            </li>
         </ul>
     </section>
 
@@ -146,39 +141,34 @@
       <h2>Academic Projects</h2>
       <ul>
         <li>
-          <strong>STM32-based Automatic Number Plate Recognition System</strong> [Apr '25 - May '25] — Pivoted from a memory-constrained on-device model by offloading image processing to an ESP32, which communicated with a local backend running an Ollama LLM and Tesseract OCR pipeline. Achieved an end-to-end latency of ~2 seconds while the STM32 coordinated peripherals. <a href="https://github.com/wannabecodeboss/333" target="_blank" rel="noopener">View on GitHub</a>
+            <strong>AI4Ax: AI-Driven Design of Approximate Circuits</strong> [Jan '25 - Present] — Architected an AI framework to navigate a $10^{26}$ design space for approximate multipliers, achieving up to 203x power reduction by optimally selecting from Cadence-characterized 28nm compressors. Accepted at DAC LBR as a Work-in-Progress.
+        </li>
+        <li>
+          <strong>QPyTorch++: Simulating Low Precision Training</strong> [May '24 - July '24] — Developed a GPU-accelerated PyTorch framework for Fixed-Posit simulation, enabling rapid, hardware-aware exploration of custom number systems for models like ResNet and GANs. It is orders of magnitude faster than existing solutions. <a href="https://github.com/GoudAbhinav/EQ_Torch" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+        <li>
+            <strong>Image Processing Toolkit on FPGA</strong> [Feb '24 - Apr '24] — Implemented an image processing toolkit on a Basys3 FPGA to process 128x128 pixel images transferred via UART. Performed multiple convolution operations (smoothing, sharpening) using BRAM. Awarded Best Project in the course. <a href="https://github.com/GoudAbhinav/Image-Processing-Toolkit--IPT1.git" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+        <li>
+            <strong>STM32-based Automatic Number Plate Recognition System</strong> [Apr '25 - May '25] — Pivoted from a memory-constrained on-device model by offloading image processing to an ESP32, which communicated with a local backend running an Ollama LLM and Tesseract OCR pipeline. Achieved an end-to-end latency of ~2 seconds while the STM32 coordinated peripherals. <a href="https://github.com/wannabecodeboss/333" target="_blank" rel="noopener">View on GitHub</a>
         </li>
         <li>
             <strong>Automatic Gain Control (AGC) for Microphones</strong> [Aug '24 - Nov '24] — Designed and assembled a complete analog AGC system from scratch, including schematic capture, multi-layer PCB layout in KiCad, and hand-soldering. The final circuit utilizes a MOSFET feedback loop to automatically normalize microphone audio levels.
         </li>
         <li>
-          <strong>Microprocessors & Embedded Systems Lab Projects (ES 333)</strong> — Developed a variety of embedded systems on the STM32 platform, focusing on hardware interfacing, real-time control, and interrupt-driven programming. Key tasks included:
-          <ul>
-            <li>Implemented an interrupt-driven digital clock with an alarm on a 16x2 LCD.</li>
-            <li>Created a real-time data visualizer to display ADC readings from a potentiometer as a dynamic bar graph on an LCD.</li>
-            <li>Designed a multifunctional up-down counter with button-controlled mode and speed settings.</li>
-            <li>Developed interrupt-based LED chase patterns with controls for speed and pattern type.</li>
-            <li>Built a 7-segment countdown timer and an N-bit Johnson ring counter.</li>
-            <li>Programmed Morse code and binary roll number displays using LEDs.</li>
-          </ul>
+          <strong>Microprocessors & Embedded Systems Lab Projects (ES 333)</strong> — Developed a variety of embedded systems on the STM32 platform, focusing on hardware interfacing, real-time control, and interrupt-driven programming.
         </li>
         <li>
-            <strong>8085 Assembly Programming: Algorithms & Data Manipulation</strong> — Wrote and tested 8085 assembly programs to perform complex data operations. Projects included:
-            <ul>
-                <li>An array processing program to find the largest/smallest values, calculate the mean, and count elements above the average.</li>
-                <li>A program to calculate the GCD (using Euclidean algorithm) and LCM of two 8-bit numbers.</li>
-                <li>A full 3x3 matrix multiplication implementation.</li>
-                <li>A 16-bit binary number to BCD conversion algorithm.</li>
-            </ul>
+            <strong>8085 Assembly Programming: Algorithms & Data Manipulation</strong> — Wrote and tested 8085 assembly programs to perform complex data operations, including an array processor, a GCD/LCM calculator, and a 3x3 matrix multiplication implementation.
         </li>
         <li>
-            <strong>FPGA-Based Battery Management System (BMS)</strong> [Jan '25 - Apr '25] — Designed a modular FPGA-based BMS for parallel monitoring of SoC, SoP, and SoT, implementing multi-level protection logic and a UART interface for real-time data logging.
+            <strong>Genetic Algorithm-Based FIR Filter Designer</strong> [Oct '24 - Nov '24] — Developed an interactive MATLAB App with a GUI that uses a Genetic Algorithm to optimize FIR filter coefficients based on user specifications, with real-time visualization of convergence. <a href="https://github.com/GoudAbhinav/Genetic-Algorithm-Based-Filter-Design" target="_blank" rel="noopener">View on GitHub</a>
+        </li>
+         <li>
+            [cite_start]<strong>Matlab App for Second-Order System Analysis</strong> [Apr '24] — Designed and exported a standalone MATLAB app to perform time-domain analysis of second-order systems, allowing users to dynamically change Gain, Natural Frequency, and Damping Ratio and plot the system's response. [cite: 987, 989, 990, 991]
         </li>
         <li>
-            <strong>Genetic Algorithm-Based FIR Filter Designer</strong> [Oct '24 - Nov '24] — Developed an interactive MATLAB App with a GUI that uses a Genetic Algorithm to optimize FIR filter coefficients based on user specifications, with real-time visualization of convergence.
-        </li>
-        <li>
-          <strong>QPyTorch++: Simulating Low Precision Training</strong> [May '24 - July '24] — Developed a CUDA framework over PyTorch to simulate neural network training and inference using the "fixed posit" number system, tested on networks like AlexNet, ResNet34, and various GANs.
+            [cite_start]<strong>Child Safety Monitoring App using Fuzzy Logic</strong> [Mar '24] — Designed a pair of Android apps to monitor a child's safety level using a fuzzy logic system that responded to accelerometer and sound level data, communicating between devices via TCP/IP. [cite: 117, 119, 121, 122]
         </li>
       </ul>
     </section>
@@ -187,9 +177,9 @@
         <h2>Technical Skills</h2>
         <div class="skills-list">
             <p><strong>Microcontrollers & Embedded Tools:</strong> STM32, ESP32, Raspberry Pi, Arduino UNO | STM32CubeIDE, Arduino IDE, KiCad</p>
-            <p><strong>Languages & Protocols:</strong> C++, C, Python, Assembly (ARMv7), Rust | UART, SPI, I2C, CAN, BLE</p>
+            <p><strong>Languages & Protocols:</strong> C++, C, Python, Verilog, SystemVerilog, Assembly (ARMv7), Rust | UART, SPI, I2C, CAN, BLE</p>
             <p><strong>Lab & Debugging Tools:</strong> Digital Oscilloscope (DSO), Signal Generator, Multimeter, Soldering</p>
-            <p><strong>High-Level Design & Software:</strong> Verilog, SystemVerilog, MATLAB | PyTorch, NumPy, Git, Docker</p>
+            <p><strong>High-Level Design & Software:</strong> MATLAB, Cadence Virtuoso, Xilinx Vivado | PyTorch, NumPy, Pandas, Git, Docker</p>
         </div>
     </section>
 
@@ -199,12 +189,12 @@
             <li>
                 <strong>Teaching Assistant, Digital Systems (ES 204)</strong>
                 <div class="meta">IIT Gandhinagar [Jan '25 – Apr '25] and [Aug '25 - Present]</div>
-                <p>Appointed for two consecutive semesters to conduct labs, grade assignments, and mentor over 200 undergraduate students in digital design concepts and Verilog, including project mentorship.</p>
+                <p>Appointed by Prof. Joycee Mekie for two consecutive semesters to conduct labs, grade assignments, and mentor over 200 undergraduate students in digital design concepts and Verilog, including project mentorship.</p>
             </li>
             <li>
                 <strong>Council Coordinator, Welfare Council</strong>
                 <div class="meta">IIT Gandhinagar [June '25 – Present]</div>
-                <p>Lead the planning, organization, and administrative coordination for all council events and initiatives, advising on strategy and managing relations with institute authorities.</p>
+                <p>Lead the planning, organization, and administrative coordination for all council events and initiatives, advising on strategy and managing relations with institute authorities. Promoted from outlets coordinator last Academic Year.</p>
             </li>
         </ul>
     </section>
@@ -212,8 +202,17 @@
     <section id="achievements">
         <h2>Academic Achievements</h2>
         <ul>
-            <li>Awarded <strong>Dean's List award</strong> (Term I & II) and Reliance Foundation Undergraduate Scholarship (2022-23).</li>
-            <li>Secured competitive branch change from Civil to Electrical Engineering based on high CPI.</li>
+            [cite_start]<li>Awarded <strong>Dean's List award</strong> (Term I & II) and Reliance Foundation Undergraduate Scholarship (2022-23). [cite: 131, 133, 998, 1000]</li>
+            [cite_start]<li>Secured competitive branch change from Civil to Electrical Engineering based on high CPI. [cite: 132, 999]</li>
+        </ul>
+    </section>
+
+    <section id="extracurriculars">
+        <h2>Extracurricular Activities</h2>
+        <ul>
+            [cite_start]<li>Enthusiastic swimmer, regularly participating in inter-IIT aquatics training sessions and competitive events. [cite: 145, 1014]</li>
+            [cite_start]<li>Worked as a senior executive of Tech Exposition in Amalthea, reviving the event after 4 years by hosting over 14 private and government institutions. [cite: 146, 147, 1015, 1016]</li>
+            [cite_start]<li>Elected as a Student Representative for the Foundation Programme '22 by coordinating professors. [cite: 148, 1017]</li>
         </ul>
     </section>
 
